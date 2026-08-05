@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: ebay-proxy
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: EBAY_APP_ID
+        value: jeremyma-Jako-PRD-ca4aa6180-0deeb951
